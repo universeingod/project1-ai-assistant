@@ -1,8 +1,10 @@
-1.**概述**：这是一个可在网页运行的小型AI Agent。
+1.**概述**：一个基于 Streamlit 的个人 AI 助手，支持多轮对话、跨会话记忆（JSON 持久化）和函数调用（计算器工具），后端接 DeepSeek API。
 
-2.**功能清单**：多轮对话/持久化记忆/工具调用（计算机）
+2.**功能清单**：多轮对话/持久化记忆/工具调用（计算器）
 
-3.**架构图**：
+3.**技术栈**：Streamlit · OpenAI SDK · DeepSeek API · Function Calling · python-dotenv
+
+4.**架构图**：
 
 ```mermaid
 flowchart TB
@@ -27,9 +29,11 @@ flowchart TB
     LLM-->|拿最终answer| UI
     MEM <-->|save/load| DISK
 ```
-4.**截图**:
+5.**截图**:
 ![算数](images/calc.png)
 ![普通问答](images/answer.png)
 
-5.**快速开始**:
-装依赖 → 配 key → streamlit run
+6.**快速开始**:
+pip install -r requirements.txt
+# 复制 .env.example 为 .env，填入你的 DEEPSEEK_API_KEY
+streamlit run app.py
